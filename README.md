@@ -16,7 +16,7 @@ Steps:
 
 ```
  aws cloudformation deploy \
-  --stack-name my-cloudbasic-ec2 \
+  --stack-name my-cloudbasic-autoscaling \
   --template-file AutoScalingMultiAZWithNotifications.template \
   --parameter-overrides KeyName=General-key-1
   ```
