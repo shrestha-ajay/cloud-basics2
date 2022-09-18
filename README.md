@@ -26,4 +26,6 @@ Steps:
 
 Related Resources: 
 1. https://s3.amazonaws.com/cloudformation-templates-us-east-1/AutoScalingMultiAZWithNotifications.template
+2. https://s3.amazonaws.com/cloudformation-templates-us-east-1/VPC_Single_Instance_In_Subnet.template
+
 
