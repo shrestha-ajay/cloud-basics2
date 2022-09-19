@@ -21,7 +21,10 @@ This CloudFormation template creates a multi-az, load balanced and Auto Scaled s
   --parameter-overrides KeyName="YOUR-EC2-KEYPAIR" OperatorEMail="YOUR-Email-Address"
   ```
 
-  Note: Replace "YOUR-EC2-KEYPAIR" & "YOUR-Email-Address" with your EC2 KeyPair name and email respectively
+  Note: Replace "YOUR-EC2-KEYPAIR" & "YOUR-Email-Address" with your EC2 KeyPair name and email respectively. 
+  
+  5. Go to AWS Console > CloudFormation and AWS Console > EC2 to confirm resources were created
+  6. After the stack is launched, check your email and confirm subscription to the notification
 
 
 #### Related Resources: 
