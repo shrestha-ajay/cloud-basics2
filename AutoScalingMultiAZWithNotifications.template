@@ -436,8 +436,8 @@
             "files" : {
               "/var/www/html/index.html" : {
                 "content" : { "Fn::Join" : ["\n", [
-                  "<img src=\"", {"Fn::FindInMap" : ["Region2Examples", {"Ref" : "AWS::Region"}, "Examples"]}, "/cloudformation_graphic.png\" alt=\"AWS CloudFormation Logo\"/>",
-                  "<h1>Congratulations, you have successfully launched the AWS CloudFormation sample.</h1>"
+                  "<h1>Congratulations, you have successfully launched the AWS CloudFormation stack with auto-scaling solution.</h1>",
+                  "<body>Gentle reminder to detele the stack after your experimentation is complete.</body>"
                 ]]},
                 "mode"    : "000644",
                 "owner"   : "root",
