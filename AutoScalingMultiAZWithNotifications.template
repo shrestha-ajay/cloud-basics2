@@ -216,6 +216,7 @@
         "VpcId" : { "Ref" : "VPC" },
         "AvailabilityZone" : "us-east-1a",
         "CidrBlock" : "10.0.0.0/24",
+        "MapPublicIpOnLaunch" : "True",
         "Tags" : [ {"Key" : "Application", "Value" : { "Ref" : "AWS::StackId"} } ]
       }
     },
@@ -225,6 +226,7 @@
         "VpcId" : { "Ref" : "VPC" },
         "AvailabilityZone" : "us-east-1b",
         "CidrBlock" : "10.0.1.0/24",
+        "MapPublicIpOnLaunch" : "True",
         "Tags" : [ {"Key" : "Application", "Value" : { "Ref" : "AWS::StackId"} } ]
       }
     },
@@ -393,7 +395,7 @@
       "Properties" : {
         "VPCZoneIdentifier" : [{"Ref": "Subnet1"} , {"Ref": "Subnet2"}],
         "LaunchConfigurationName" : { "Ref" : "LaunchConfig" },
-        "MinSize" : "1",
+        "MinSize" : "2",
         "MaxSize" : "3",
         "TargetGroupARNs" : [ { "Ref" : "ALBTargetGroup" } ],
         "NotificationConfiguration" : {
@@ -431,7 +433,6 @@
                 "httpd" : []
               }
             },
-
             "files" : {
               "/var/www/html/index.html" : {
                 "content" : { "Fn::Join" : ["\n", [
@@ -442,7 +443,6 @@
                 "owner"   : "root",
                 "group"   : "root"
               },
-
               "/etc/cfn/cfn-hup.conf" : {
                 "content" : { "Fn::Join" : ["", [
                   "[main]\n",
@@ -563,11 +563,26 @@
         "ComparisonOperator": "LessThanThreshold"
       }
     },
-
+    
+    "ALBSecurityGroup" : {
+      "Type" : "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "Enable HTTP from the Internet",
+        "SecurityGroupIngress" : [ {
+          "IpProtocol" : "tcp",
+          "FromPort" : "80",
+          "ToPort" : "80",
+          "CidrIp" : "0.0.0.0/0"
+        } ],
+        "VpcId" : { "Ref" : "VPC" }
+      }
+    },
+    
     "ApplicationLoadBalancer" : {
       "Type" : "AWS::ElasticLoadBalancingV2::LoadBalancer",
       "Properties" : {
-        "Subnets" : [{"Ref": "Subnet1"} , {"Ref": "Subnet2"}]
+        "Subnets" : [{"Ref": "Subnet1"} , {"Ref": "Subnet2"}],
+        "SecurityGroups" : [{"Ref": "ALBSecurityGroup"}]
       }
     },
 
