@@ -18,7 +18,7 @@ Steps:
  aws cloudformation deploy \
   --stack-name my-cloudbasic-autoscaling \
   --template-file AutoScalingMultiAZWithNotifications.template \
-  --parameter-overrides KeyName=General-key-1
+  --parameter-overrides KeyName="YOUR-EC2-KEYPAIR" OperatorEMail="YOUR-Email-Address"
   ```
 
   Note: Replace "General-key-1" KeyName with your EC2 KeyPair name
