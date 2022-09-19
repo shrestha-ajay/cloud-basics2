@@ -21,7 +21,7 @@ This CloudFormation template creates a multi-az, load balanced and Auto Scaled s
   --parameter-overrides KeyName="YOUR-EC2-KEYPAIR" OperatorEMail="YOUR-Email-Address"
   ```
 
-  Note: Replace "General-key-1" KeyName with your EC2 KeyPair name
+  Note: Replace "YOUR-EC2-KEYPAIR" & "YOUR-Email-Address" with your EC2 KeyPair name and email respectively
 
 
 #### Related Resources: 
