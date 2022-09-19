@@ -1,4 +1,4 @@
-###Tutorial on automatically adding servers based on load in AWS
+#Tutorial on automatically adding servers based on load in AWS
 
 ##This CloudFormation template creates a multi-az, load balanced and Auto Scaled sample web site running on an Apache Web Serever. The application is configured to span all Availability Zones in the region and is Auto-Scaled based on the CPU utilization of the web servers. Notifications will be sent to the operator email address on scaling events. The instances are load balanced with a simple health check against the default web page. 
 
