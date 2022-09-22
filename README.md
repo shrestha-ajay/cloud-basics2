@@ -9,7 +9,7 @@ This CloudFormation template creates a multi-az, load balanced and Auto Scaled s
 1. Fork this repository by clicking on "Fork". 
 2. Clone this repository to your local computer by running following:
 
-   ```$ git clone git@github.com/YOUR-USERNAME/YOUR-REPOSITORY```
+   ```$ git clone git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git```
 3. Configure AWS CLI in your local machine
 4. Run the following command to create the ec2 instance and security group in your AWS account
 
