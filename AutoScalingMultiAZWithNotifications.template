@@ -531,7 +531,7 @@
         "Namespace": "AWS/EC2",
         "Statistic": "Average",
         "Period": "60",
-        "EvaluationPeriods": "2",
+        "EvaluationPeriods": "1",
         "Threshold": "90",
         "AlarmActions": [ { "Ref": "WebServerScaleUpPolicy" } ],
         "Dimensions": [
@@ -551,7 +551,7 @@
         "Namespace": "AWS/EC2",
         "Statistic": "Average",
         "Period": "60",
-        "EvaluationPeriods": "2",
+        "EvaluationPeriods": "1",
         "Threshold": "70",
         "AlarmActions": [ { "Ref": "WebServerScaleDownPolicy" } ],
         "Dimensions": [
