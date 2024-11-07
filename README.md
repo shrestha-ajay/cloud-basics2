@@ -32,3 +32,5 @@ This CloudFormation template creates a multi-az, load balanced and Auto Scaled s
 2. https://s3.amazonaws.com/cloudformation-templates-us-east-1/VPC_Single_Instance_In_Subnet.template
 
 
+this is test
+
